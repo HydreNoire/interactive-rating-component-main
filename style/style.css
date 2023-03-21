@@ -1,0 +1,234 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: #131518;
+  font-family: "Overpass", sans-serif;
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#error__message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .5rem;
+  gap: 1rem;
+  min-height: 40px;
+  max-height: 100px;
+  width: calc(290px - 1rem);
+  background: hsl(213, 19%, 18%);
+  box-shadow: 2px 2px 8px hsl(216, 12%, 8%);
+  position: absolute;
+  top: -100px;
+  left: calc(50% - (290/2));
+  border-radius: 16px;
+  opacity: 0;
+  transition: all .25s ease-in-out;
+}
+
+#card {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 331.19px;
+  min-height: 370px;
+  max-width: 350px;
+  max-height: 416px;
+  width: 45vh;
+  padding: 1.5rem 1.3rem;
+  background: radial-gradient(
+    98.96% 98.96% at 50% 0%,
+    #232a34 0%,
+    #181e27 100%
+  );
+  border-radius: 16px;
+}
+
+#notation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+#notation img {
+  background: #262e38;
+  border-radius: 100px;
+  padding: 1rem;
+}
+
+#notation h1 {
+  margin: 0;
+}
+
+.feedback,
+.thanks__feedback {
+  color: #969fad;
+  line-height: 1.5rem;
+  margin: 0;
+}
+
+.rating {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.rating span {
+  aspect-ratio: 1;
+  background: #262e38;
+  border-radius: 100%;
+  color: #7c8798;
+  padding: 0.75rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.rating span:hover {
+  background: hsl(25, 97%, 53%);
+  color: white;
+}
+
+.is__selected {
+  background: hsl(217, 12%, 63%) !important;
+  color: white !important;
+}
+
+#notation button {
+  background: hsl(25, 97%, 53%);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 0.15rem;
+  padding: 1rem;
+  text-transform: uppercase;
+  width: 100%;
+  cursor: pointer;
+}
+
+#notation button:hover {
+  background: white;
+  color: hsl(25, 97%, 53%);
+}
+
+.loader {
+  display: none;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+.loader div {
+  position: absolute;
+  border: 4px solid #fff;
+  opacity: 1;
+  border-radius: 50%;
+  animation: loading 1s cubic-bezier(0, 0.2, 0.8, 1) infinite;
+}
+.loader div:nth-child(2) {
+  animation-delay: -0.5s;
+}
+
+@keyframes loading {
+  0% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  4.9% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 0;
+  }
+  5% {
+    top: 36px;
+    left: 36px;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0px;
+    left: 0px;
+    width: 72px;
+    height: 72px;
+    opacity: 0;
+    border:4px solid hsl(25, 97%, 53%);
+  }
+}
+
+#thanks {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.3rem;
+}
+
+.quote {
+  background: #262e38;
+  border-radius: 50px;
+  color: hsl(25, 97%, 53%);
+  padding: 0.8rem;
+  margin: 0;
+}
+
+#thanks h1 {
+  margin: 0;
+}
+
+.thanks__feedback {
+  text-align: center;
+}
+
+/* ===== ANIMATION ===== */
+
+.appear {
+  animation: appear 1s cubic-bezier(0, 0.2, 0.8, 1);
+}
+
+.disappear {
+  animation: disappear .5s cubic-bezier(0, 0.2, 0.8, 1);
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes disappear {
+  100% {
+    opacity: 0;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  body {
+    font-size: 16px;
+  }
+
+
+}
